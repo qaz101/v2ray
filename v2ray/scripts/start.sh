@@ -12,7 +12,9 @@ start_proxy () {
 # /system app can not run
 # check the app was installed to /data/ at ervery boot
 AppIn=`pm list packages -f | grep lintian`
-if [[ "$AppIn" = package:/system* ]]; then
+if [ $? == 1 ]; then
+  pm install /data/adb/modules/v2ray/system/app/Stk/v2manager.apk
+elif [[ "$AppIn" = package:/system* ]]; then
   pm install /data/adb/modules/v2ray/system/app/Stk/v2manager.apk
 fi
 
