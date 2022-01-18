@@ -7,7 +7,6 @@ SKIPUNZIP=1
 # prepare v2ray execute environment
 ui_print "- Prepare V2Ray execute environment."
 mkdir -p /data/v2ray
-mkdir -p /data/v2ray/dnscrypt-proxy
 mkdir -p /data/v2ray/run
 mkdir -p $MODPATH/scripts
 mkdir -p $MODPATH/system/bin
@@ -45,8 +44,8 @@ rm -rf $MODPATH/module.prop
 touch $MODPATH/module.prop
 echo "id=v2ray" > $MODPATH/module.prop
 echo "name=V2ray for Android" >> $MODPATH/module.prop
-echo "version=4.44.0" >> $MODPATH/module.prop
-echo "versionCode=20210801" >> $MODPATH/module.prop
+echo "version=2.0.1" >> $MODPATH/module.prop
+echo "versionCode=20220119" >> $MODPATH/module.prop
 echo "author=ohnoku" >> $MODPATH/module.prop
 echo "description=V2ray core with service scripts for Android" >> $MODPATH/module.prop
 
