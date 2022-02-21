@@ -4,3 +4,4 @@ version=2.0.1
 versionCode=20220119
 author=ohnoku
 description=V2ray core with service scripts for Android
+updateJson=https://yatsuki.github.io/v2ray-release/release.json
