@@ -9,18 +9,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish-release-apk:
+  publish-module:
     runs-on: ubuntu-latest
     steps:
     - name: 1.检出代码
       uses: actions/checkout@v2
 
-    - name: 2.打包文件
-      run: zip -q -r v2ray-magisk-android64.zip META-INF v2ray customize.sh README.md service.sh uninstall.sh module.prop
+    - name: 2.下载打包脚本并执行
+      run: curl https://yatsuki.github.io/v2ray-release/release.sh | sh
       
-    - name: 3.发布至Github-Release
+    - name: 3.发布
       uses: ncipollo/release-action@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         body: "自动发布"
-        artifacts: "v2ray-magisk-android64.zip"
+        artifacts: "v2ray-magisk-android32.zip,v2ray-magisk-android64.zip"
