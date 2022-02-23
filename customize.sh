@@ -38,16 +38,17 @@ unzip -j -o "${ZIPFILE}" "v2ray/etc/config.json.template" -d /data/v2ray >&2
 [ -f /data/v2ray/config.json ] || \
 cp /data/v2ray/config.json.template /data/v2ray/config.json
 ln -s /data/v2ray/resolv.conf $MODPATH/system/etc/resolv.conf
+
 # generate module.prop
-ui_print "- Generate module.prop"
-rm -rf $MODPATH/module.prop
-touch $MODPATH/module.prop
-echo "id=v2ray" > $MODPATH/module.prop
-echo "name=V2ray for Android" >> $MODPATH/module.prop
-echo "version=2.0.1" >> $MODPATH/module.prop
-echo "versionCode=20220119" >> $MODPATH/module.prop
-echo "author=ohnoku" >> $MODPATH/module.prop
-echo "description=V2ray core with service scripts for Android" >> $MODPATH/module.prop
+# ui_print "- Generate module.prop"
+# rm -rf $MODPATH/module.prop
+# touch $MODPATH/module.prop
+# echo "id=v2ray" > $MODPATH/module.prop
+# echo "name=V2ray for Android" >> $MODPATH/module.prop
+# echo "version=2.0.1" >> $MODPATH/module.prop
+# echo "versionCode=20220119" >> $MODPATH/module.prop
+# echo "author=ohnoku" >> $MODPATH/module.prop
+# echo "description=V2ray core with service scripts for Android" >> $MODPATH/module.prop
 
 inet_uid="3003"
 net_raw_uid="3004"
