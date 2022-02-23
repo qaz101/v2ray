@@ -1,0 +1,26 @@
+# 根据上传的tag，打包发布至Github
+
+name: Auto Release
+
+on:
+  push:
+    tags:
+    - '*'
+  workflow_dispatch:
+
+jobs:
+  publish-release-apk:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 1.检出代码
+      uses: actions/checkout@v2
+
+    - name: 2.打包文件
+      run: zip -q -r v2ray-magisk-android64.zip META-INF v2ray customize.sh README.md service.sh uninstall.sh module.prop
+      
+    - name: 3.发布至Github-Release
+      uses: ncipollo/release-action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: "自动发布"
+        artifacts: "v2ray-magisk-android64.zip"
