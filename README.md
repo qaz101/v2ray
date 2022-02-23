@@ -8,20 +8,27 @@
 
 ## 包含内容
 
-- [V2Ray core](<https://github.com/v2fly/v2ray-core>): V2Ray核心代理程序
 - 基于iptables的代理脚本
 - [V2Manager](<https://github.com/yatsuki/v2manager>)：管理核心程序以及iptables的APP
 - [magisk-module-installer](https://github.com/topjohnwu/magisk-module-installer)
 
+### 插件打包时一起打包的二进制文件
+- [V2Ray core](<https://github.com/v2fly/v2ray-core>): V2Ray核心代理程序
+- [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat): V2Ray 路由规则文件加强版
+
 ## 安装
 
-目前还未合并至Magisk官方模块仓库，下载[zip](https://github.com/yatsuki/v2ray/releases)后自行在`Magisk Manager`中从本地安装
+下载[zip](https://github.com/yatsuki/v2ray/releases)后自行在`Magisk Manager`中从本地安装。
+
+### 插件更新
+Magisk更新至24.0+之后取消了线上仓库，插件需要在`module.prop`中指定`updateJson`来检查新版本。本插件将使用[v2ray-release](https://github.com/yatsuki/v2ray-release)来检查更新。由于有32/64平台的区分，`updateJson`会在插件发布打包时指定。
 
 ## 配置文件(底层)
 
 - `/data/v2ray/config.json` V2Ray配置文件
 - `/data/v2ray/appid.list` 需要代理的APP列表
 - `/data/v2ray/softap.list` 需要代理的子网
+- `/data/v2ray/manual` 停用开机启动
 
 ## 使用方法
 
